@@ -7,50 +7,88 @@ import { FaMoon } from "react-icons/fa";
 export default function Header() {
   const path = useLocation().pathname;
   return (
-    <Navbar className="border-b-2 bg-gray-300">
+    <Navbar className="border-b-2 bg-zinc-800 text-white p-2">
       <Link
         to="/"
-        className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
+        className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold"
       >
-        <div className="flex w-32 h-auto">
-          <img
-            className="bg-cover"
-            src="../../public/logo-neo.png"
-            alt="Logo-neo"
-          />
+        <div className="flex items-center gap-2">
+          <div className="w-12 h-auto overflow-hidden rounded-full">
+            <img
+              className="h-full bg-cover"
+              src="../../public/logo-neo.png"
+              alt="Logo-neo"
+            />
+          </div>
+          <span className="text-center text-slate-50">N E O</span>
         </div>
       </Link>
-      <form action="">
-        <TextInput
-          type="text"
-          placeholder="Buscar  "
-          rightIcon={AiOutlineSearch}
-          className="hidden lg:inline"
-        />
-      </form>
-      <Button className="w-12 h-10 lg:hidden" color="gray" pill>
-        <AiOutlineSearch />
-      </Button>
       <div className="flex gap-2 md:order-2">
-        <Button className="w-12 h-10 hidden sm:inline" color="gray" pill>
+        <Button className="w-12 h-10 hidden sm:inline hover:bg-zinc-600" color='#52525b'>
           <FaMoon />
         </Button>
+        <form action="">
+          <TextInput
+            type="text"
+            placeholder="Buscar"
+            rightIcon={AiOutlineSearch}
+            style={{backgroundColor: '#D1D5DB'}}
+            className="hidden lg:inline"
+          />
+        </form>
+
+        <Button className="w-12 h-10 lg:hidden" color="gray" pill>
+          <AiOutlineSearch />
+        </Button>
         <Link to="/sign-in">
-          <Button gradientDuoTone="greenToBlue" pill outline>
+          <Button
+            className="hidden md:inline "
+            outline
+            gradientDuoTone="greenToBlue"
+          >
             Ingresar
           </Button>
         </Link>
         <Navbar.Toggle />
       </div>
-      <Navbar.Collapse >
-        <Navbar.Link className=" text-black" active={path === "/"} as={"div"}>
-          <Link to="/">Inicio</Link>
+      <Navbar.Collapse className="border-b-black">
+        <Navbar.Link
+          className="text-gray-300 hover:bg-slate-400 text-center"
+          active={path === "/"}
+          as={"div"}
+        >
+          <Link to="/" className="inline-block w-full">
+            Inicio
+          </Link>
         </Navbar.Link>
-        <Navbar.Link className=" text-black" active={path === "/about"} as={"div"}>
-          <Link to="/about">Acerca de</Link>
+        <Navbar.Link
+          className="text-gray-300 hover:bg-slate-400 text-center"
+          active={path === "/about"}
+          as={"div"}
+        >
+          <Link to="/about" className="inline-block w-full">
+            Acerca de
+          </Link>
         </Navbar.Link>
-        <Navbar.Link className=" text-black" active={path === "/projects"} as={"div"}>
-          <Link to="/projects">Proyectos</Link>
+        <Navbar.Link
+          className="text-gray-300 hover:bg-slate-400 text-center "
+          active={path === "/bloggers"}
+          as={"div"}
+        >
+          <Link to="/bloggers" className="inline-block w-full">
+            Bloggers
+          </Link>
+        </Navbar.Link>
+        <Navbar.Link className="text-gray-300 hover:bg-zinc-800">
+          <Link to="/sign-in">
+            <Button
+              className="md:hidden w-full"
+              outline
+              gradientDuoTone="greenToBlue"
+            >
+              Ingresar
+            </Button>
+          </Link>
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
