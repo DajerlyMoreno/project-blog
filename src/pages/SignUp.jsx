@@ -21,7 +21,7 @@ export default function SignUp() {
             <div>
               <Label value="Tu correo electrónico" />
               <TextInput
-                type="text"
+                type="email"
                 icon={HiMail}
                 placeholder="tucorreo@correo.com"
                 id="email"
