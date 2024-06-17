@@ -14,7 +14,7 @@ export default function SignIn() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.username || !formData.email || !formData.password) {
+    if (!formData.email || !formData.password) {
       return setErrorMessage('Debe llenar todos los campos');
     }
     try {
