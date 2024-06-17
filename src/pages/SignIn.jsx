@@ -97,7 +97,7 @@ export default function SignIn() {
                   <span className="pl-3">Cargando</span>
                 </>
               ) : (
-                'Ingres'
+                'Ingresar'
               )}
             </Button>
           </form>
