@@ -81,7 +81,7 @@ export default function SignIn() {
               <Label value="Tu contraseña" />
               <TextInput
                 type="password"
-                placeholder="contraseña"
+                placeholder="*****"
                 id="password"
                 onChange={handleChange}
               />
