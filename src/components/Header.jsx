@@ -1,11 +1,23 @@
-import { Button, Navbar, NavbarCollapse, TextInput } from 'flowbite-react';
+import {
+  Avatar,
+  AvatarGroupCounter,
+  Button,
+  Dropdown,
+  DropdownDivider,
+  DropdownHeader,
+  Navbar,
+  NavbarCollapse,
+  TextInput,
+} from 'flowbite-react';
 import { Link, useLocation } from 'react-router-dom';
 import React from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaMoon } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 
 export default function Header() {
   const path = useLocation().pathname;
+  const { currentUser } = useSelector((state) => state.user);
   return (
     <Navbar className="border-b-2 bg-zinc-800 text-white p-2">
       <Link
@@ -43,15 +55,37 @@ export default function Header() {
         <Button className="w-12 h-10 lg:hidden" color="gray" pill>
           <AiOutlineSearch />
         </Button>
-        <Link to="/sign-in">
-          <Button
-            className="hidden md:inline "
-            outline
-            gradientDuoTone="greenToBlue"
+        {currentUser ? (
+          <Dropdown
+            arrowIcon={false}
+            label={
+              <Avatar alt="user" img={currentUser.profilePicture} rounded />
+            }
+            inline
           >
-            Ingresar
-          </Button>
-        </Link>
+            <DropdownHeader>
+              <span className="block text-sm">@{currentUser.username}</span>
+              <span className="block text-sm truncate">
+                {currentUser.email}
+              </span>
+            </DropdownHeader>
+            <Link to="/dashboard?tab=profile">
+              <Dropdown.Item>Perfil</Dropdown.Item>
+            </Link>
+            <DropdownDivider />
+            <Dropdown.Item>Salir</Dropdown.Item>
+          </Dropdown>
+        ) : (
+          <Link to="/sign-in">
+            <Button
+              className="hidden md:inline "
+              outline
+              gradientDuoTone="greenToBlue"
+            >
+              Ingresar
+            </Button>
+          </Link>
+        )}
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse className="border-b-black">
@@ -83,15 +117,17 @@ export default function Header() {
           </Link>
         </Navbar.Link>
         <Navbar.Link className="text-gray-300 hover:bg-zinc-800" as={'div'}>
-          <Link to="/sign-in">
-            <Button
-              className="md:hidden w-full"
-              outline
-              gradientDuoTone="greenToBlue"
-            >
-              Ingresar
-            </Button>
-          </Link>
+          {currentUser ? null : (
+            <Link to="/sign-in">
+              <Button
+                className="md:hidden w-full"
+                outline
+                gradientDuoTone="greenToBlue"
+              >
+                Ingresar
+              </Button>
+            </Link>
+          )}
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
