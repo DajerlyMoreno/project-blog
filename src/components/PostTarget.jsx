@@ -2,12 +2,21 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function PostTarget() {
+  const post = {
+    slug: 'mi-primer-post',
+    image: '../../public/logo-neo.png', 
+    title: 'Las mejores comidas de la region',
+    category: 'Restaurante'
+  };
   return (
     <div className='group relative w-full border border-teal-500 hover:border-2
     h-[400px] overflow-hidden rounded-lg sm-w-[430px] transition-all'>
         <Link to={`/post/${post.slug}`}>
-            <image src={post.image} alt="post cover" className='h-[200px] w-full 
-            object-cover group-hover:h-[150px] transition-all duration-300 z-20'/>
+          <img
+            src={post.image} 
+            alt="post cover" 
+            className='h-[200px] w-full object-cover group-hover:h-[150px] transition-all duration-300 z-20'
+          />
         </Link>
         <div className='p-3 flex flex-col gap-2'>
             <p>{post.title}</p>
