@@ -30,7 +30,7 @@ export default function Home() {
         {posts && posts.length == 0 && (
           <div className='flex flex-col justify-center items-center mb-5 '>
             <h1 className='text-xl mt-10 font-semibold'>¡EXPLORA LA ULTIMO!</h1>
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-10'>
+            <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pt-10'>
               <PostTarget/>
               <PostTarget/>
               <PostTarget/>

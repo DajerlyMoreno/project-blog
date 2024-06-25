@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function DescriptionAndAllPost() {
   return (
-    <div className='w-full h-auto flex flex-col sm:flex-row bg-gradient-to-r from-orange-300 to-purple-100 items-center'>
+    <div className='w-full h-auto flex flex-col sm:flex-row bg-gradient-to-r from-orange-400 via-orange-300 to-orange-100  items-center'>
       <div className='w-full sm:w-1/3 h-96'>
         <img src="../../public/logo-neo.png" className='w-full h-full object-cover'/>
       </div>
