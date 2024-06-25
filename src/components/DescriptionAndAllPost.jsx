@@ -5,7 +5,7 @@ export default function DescriptionAndAllPost() {
   return (
     <div className='w-full h-auto flex flex-col sm:flex-row bg-gradient-to-r from-orange-400 via-orange-300 to-orange-100  items-center'>
       <div className='w-full sm:w-1/3 h-96'>
-        <img src="../../public/logo-neo.png" className='w-full h-full object-cover'/>
+        <img src="../../public/logo-neo.png" className='w-full h-full object-cover rounded-tr-[200px]'/>
       </div>
       <div className='w-full sm:w-2/3 h-auto flex flex-col justify-center items-center p-7 text-lg sm:text-2xl text-center'>
         <p className="mb-4">
