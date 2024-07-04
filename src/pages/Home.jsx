@@ -9,7 +9,7 @@ export default function Home() {
   useEffect(() =>{
     try {
       const fetchPosts = async () => {
-        //const rest = await fetch(`/api/post/getPosts`)
+        const rest = await fetch(`/api/post/getposts`)
         const data = await rest.json()
         setPosts(data.posts)
 
@@ -31,9 +31,9 @@ export default function Home() {
           <div className='flex flex-col justify-center items-center mb-5 '>
             <h1 className='text-xl mt-10 font-semibold'>¡EXPLORA LA ULTIMO!</h1>
             <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pt-10'>
-              {posts.map((post) =>{
+              {posts.map((post) => (
                 <PostTarget key = {post.id} post = {post}/>
-              })}
+              ))}
             </div>
           </div>
         )}

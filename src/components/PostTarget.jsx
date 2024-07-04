@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function PostTarget() {
-  const post = {
+export default function PostTarget({ post }) {
+  /*const post = {
     slug: 'mi-primer-post',
     image: '../../public/logo-neo.png', 
     title: 'Las mejores comidas de la region',
     category: 'Restaurante'
-  };
+  };*/
   return (
     <div className='group relative w-full border border-teal-500 hover:border-2
     h-[300px] overflow-hidden rounded-lg sm-w-[430px] transition-all'>
