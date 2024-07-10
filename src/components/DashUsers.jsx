@@ -51,10 +51,9 @@ export default function DashUsers() {
   };
 
   const handleDeleteUser = async () => {
-    setShowModal(false);
     try {
       const res = await fetch(
-        `/api/user/deleteuser/${userIdToDelete}/${currentUser._id}`,
+        `/api/user/delete/${userIdToDelete}`,
         {
           method: 'DELETE',
         }
@@ -63,9 +62,8 @@ export default function DashUsers() {
       if (!res.ok) {
         console.log(data.message);
       } else {
-        setUserPosts((prev) =>
-          prev.filter((post) => post._id !== postIdToDelete)
-        );
+        setUsers((prev) => prev.filter((user) => user._id !== userIdToDelete));
+        setShowModal(false);
       }
     } catch (error) {
       console.log(error.message);
@@ -123,7 +121,7 @@ export default function DashUsers() {
               onClick={handleShowMore}
               className='w-full text-teal-500 self-center text-sm py-7'
             >
-              Show more
+              Ver mas
             </button>
           )}
         </>
