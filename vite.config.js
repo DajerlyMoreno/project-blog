@@ -8,6 +8,7 @@ export default defineConfig({
       '/api': {
         // target: 'http://localhost:3000',
         target: 'https://back-blog-project.onrender.com',
+        //target prove
         secure: false,
       },
     },
