@@ -51,7 +51,7 @@ export default function SignUp() {
             <div className="flex w-40 h-auto mx-auto overflow-hidden rounded-full">
               <img
                 className="bg-cover"
-                src="../../public/logo-neo.png"
+                src="https://lh3.googleusercontent.com/u/1/drive-viewer/AKGpihZc_ASAh0i4gb6NaeTTWYIzRUPv72cyiP7-jgWelgWNiubSQ7iL1J48EFNkiFStHbRfUavVxZOrVRTR5ryXslp7PnOYK7YYYEk=w1919-h853-rw-v1"
                 alt="Logo-neo"
               />
             </div>
