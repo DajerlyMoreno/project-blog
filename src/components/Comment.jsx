@@ -70,19 +70,19 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
                             <Button
                                 type='button'
                                 size='sm'
-                                gradientDuoTone='purpleToBlue'
+                                color='success'
                                 onClick={handleSave}
                             >
-                                Save
+                                Guardar
                             </Button>
                             <Button
                                 type='button'
                                 size='sm'
-                                gradientDuoTone='purpleToBlue'
+                                color='failure'
                                 outline
                                 onClick={() => setIsEditing(false)}
                             >
-                                Cancel
+                                Cancelar
                             </Button>
                         </div>
                     </>
@@ -104,7 +104,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
                                 {comment.numberOfLikes > 0 &&
                                     comment.numberOfLikes +
                                     ' ' +
-                                    (comment.numberOfLikes === 1 ? 'like' : 'likes')}
+                                    'Me gusta'}
                             </p>
                             {currentUser &&
                                 (currentUser._id === comment.userId || currentUser.isAdmin) && (
@@ -114,14 +114,14 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
                                             onClick={handleEdit}
                                             className='text-gray-400 hover:text-blue-500'
                                         >
-                                            Edit
+                                            Editar
                                         </button>
                                         <button
                                             type='button'
                                             onClick={() => onDelete(comment._id)}
                                             className='text-gray-400 hover:text-red-500'
                                         >
-                                            Delete
+                                            Borrar
                                         </button>
                                     </>
                                 )}
