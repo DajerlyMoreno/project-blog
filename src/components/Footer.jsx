@@ -12,7 +12,7 @@ export default function FooterCom() {
               <div className="h-32 w-32 overflow-hidden rounded-full border border-yellow-400">
                 <img
                   className="h-full bg-cover"
-                  src="../../public/logo-empresa.svg"
+                  src="https://lh3.googleusercontent.com/u/1/drive-viewer/AKGpihYWbxTaUb4Srevs4DLIIWtryUyjmo5KBBrAMMQkGf1mVaKGPhAv5PaNNw1JhSdcVIJOlBcjNhVjA-bOvjiN-DfRj5Zv78KKiI4=w1919-h853-rw-v1"
                   alt="Logo-neo"
                 />
               </div>
