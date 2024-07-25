@@ -19,7 +19,7 @@ export default function DescriptionAndAllPost() {
           déjate llevar por un viaje gastronómico sin límites!
         </p>
         <Button className="rounded-full px-8 py-4 text-lg sm:text-2xl">
-          <a href="search?searchTerm=">VER TODOS LOS POST</a>
+          <a href="/search?searchTerm=">VER TODOS LOS POST</a>
         </Button>
       </div>
     </div>
